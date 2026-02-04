@@ -38,3 +38,80 @@
 
 </body>
 </html> 
+
+
+
+code2 Answer:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Character Counter</title>
+</head>
+<body>
+
+  <textarea id="text"></textarea>
+  <p id="char-count">0 / 100</p>
+
+  <script>
+    (function () {
+      const textarea = document.getElementById("text");
+      const counter = document.getElementById("char-count");
+      const MAX = 100;
+
+      textarea.addEventListener("input", function () {
+        const length = textarea.value.length;
+        counter.textContent = length + " / " + MAX;
+
+        if (length > MAX) {
+          counter.style.color = "red";
+        } else {
+          counter.style.color = "";
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
+
+code3 Answer:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>once Function</title>
+</head>
+<body>
+
+  <h2>Once Function Demo</h2>
+  <button onclick="greetOnce()">Click Me</button>
+
+  <script>
+    function once(fn) {
+      let hasRun = false;
+      return function () {
+        if (hasRun) return;
+        hasRun = true;
+        fn();
+      };
+    }
+
+    function greet() {
+      alert("Hello");
+    }
+
+    const greetOnce = once(greet);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
